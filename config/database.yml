@@ -22,6 +22,6 @@ test:
 
 production:
   <<: *default
-  adapter: mysql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
   pool: 5
