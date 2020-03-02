@@ -22,6 +22,7 @@ test:
 
 production:
   <<: *default
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  url: postgres://bkrvlwoikwlrva:c5965344f130a1dfd6e788ab5fce8d76178d60bce631272c51839b1461483f5f@ec2-35-168-54-239.compute-1.amazonaws.com:5432/d504ft6svlqktt
+  encoding: unicode
   pool: 5
