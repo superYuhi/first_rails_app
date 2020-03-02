@@ -1,0 +1,42 @@
+<div class="main top-main">
+  <div class="container-top">
+    <div class="top-message">
+      <h1>Muscle&nbsp;Gram</h1>
+    </div>
+    <div class="top-explain">
+      <a>This is SNS</a>
+    </div>
+    <div class="status-box">
+      <div class="status">
+        <a>Information</a>
+      </div>
+      <p id="Clock1" style="display: inline"></p>
+      <div id="top-counter">
+        <ul>
+          <li class="fas fa-users top-user-mark"></li>
+          <div id="sentence-u">
+            <%= @users_count %>
+            <a>&nbsp;users</a>
+          </div>
+          <li class="far fa-address-card top-post-mark"></li>
+          <div id="sentence-p">
+            <%= @posts_count %>
+            <a>&nbsp;posts</a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="created_by">
+    <a>Copyright © 2020 Yuhi-Hatada All Rights Reserved.<a>
+  </div>
+</div>
+</div>
+
+<style type="text/css">
+  .logo-color a{
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+  }
+</style>

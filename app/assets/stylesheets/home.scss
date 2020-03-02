@@ -1,0 +1,336 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/* reset ================================ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #2d3133;
+  font-size: 17px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+input {
+  background-color: transparent;
+  outline-width: 0;
+}
+
+form input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
+
+/* 共通レイアウト ================================ */
+h6 {
+  font-size: 20px;
+  color: red;
+  font-family: serif;
+}
+
+body {
+  color: #2d3133;
+  margin: 0;
+  min-height: 1vh;
+  background-color: black;
+}
+
+.main {
+  position: absolute;
+  top: 64px;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  background-color: black;
+}
+
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  clear: both;
+}
+
+/* ヘッダー ================================ */
+header {
+  padding-top: 15px;
+  height: 64px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background-color: black;
+}
+
+.header-logo {
+  float: left;
+  padding-left: 40px;
+  font-family: cursive;
+  line-height: 64px;
+}
+
+.header-logo a{
+  color: white;
+  font-size: 30px;
+  padding: 4px;
+}
+
+.header-logo a:hover {
+  color: #005FFF;
+}
+
+.header-menus {
+  float: left;
+  font-family: impact;
+  line-height: 64px;
+}
+
+.header-menus li {
+  float: left;
+  padding-left: 30px;
+}
+
+.header-menus a {
+  font-size: 22px;
+  color: white;
+  padding: 5px;
+  border-bottom: 2px solid white;
+}
+
+.header-menus a:hover {
+  color: #005FFF;
+}
+
+.header-user {
+  float: right;
+  font-family: impact;
+  margin-right: 30px;
+}
+
+.header-user a {
+  float: right;
+  line-height: 20px;
+  font-size: 25px;
+  color: white;
+  padding: 7px;
+  margin-left: 10px;
+  margin-top: 12px;
+  border-bottom: 2px solid white;
+}
+
+.header-user a:hover {
+  color: #005FFF;
+}
+
+.header-user img {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  object-fit: cover;
+  margin-top: 8px;
+}
+
+/* top ================================ */
+.container-top {
+  text-align: center;
+  max-width: 500px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  clear: both;
+}
+
+.top-main::before {
+  filter: brightness(0.5);
+}
+
+.top-main {
+  padding: 100px 0 100px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  color: white;
+}
+
+.top-message {
+  position: relative;
+  font-size: 30px;
+  font-family: cursive;
+  margin-bottom: 10px;
+}
+
+.top-explain {
+  margin-top: 10px;
+}
+
+.top-explain a {
+  color: #BBBBBB;
+  font-size: 20px;
+}
+
+.status-box {
+  margin-top: 100px;
+  background-color: white;
+  border-radius: 20px;
+  border: 10px double black;
+}
+
+.status-box p{
+  font-size: 20px;
+  color: #777777;
+}
+
+.status {
+  padding-top: 20px;
+}
+
+.status a {
+  color: black;
+  font-size: 70px;
+  font-family: cursive;
+}
+
+
+.top-user-mark {
+  font-size: 100px;
+  color: #78FF94;
+}
+
+.top-post-mark {
+  font-size: 110px;
+  color: #75A9FF;
+}
+
+#top-counter ul {
+  margin-top: 80px;
+  padding:0;
+  list-style: none;
+}
+
+#sentence-u {
+  color: black;
+  font-size: 50px;
+  margin-bottom: 70px;
+}
+
+#sentence-u a{
+  color: gray;
+  font-size: 50px;
+}
+
+#sentence-p {
+  color: black;
+  font-size: 50px;
+  padding-bottom: 30px;
+}
+
+#sentence-p a{
+  color: gray;
+  font-size: 50px;
+}
+
+.created_by {
+  margin-top: 200px;
+}
+
+.created_by a{
+  font-size: 20px;
+  color: #666666;
+}
+
+
+/* フォーム================================ */
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 20px;
+  border: 7px double black;
+}
+
+.form-heading {
+  font-weight: 500;
+  margin: 100px 0 60px;
+  font-size: 48px;
+  color: white;
+}
+
+.form-body {
+  padding: 30px;
+}
+
+.form-error {
+  color: #ff4d75;
+}
+
+.form input {
+  width: 100%;
+  border: 1px solid #d8dadf;
+  padding: 10px;
+  color: #57575f;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-radius: 2px;
+}
+
+.form textarea {
+  width: 100%;
+  min-height: 110px;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.form input[type="submit"] {
+  font-size: 22px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-weight: 300;
+  width: 120px;
+  border-radius: 5px;
+  border: 4px double white;
+  margin-top: 8px;
+  margin-bottom: 0;
+  float: right;
+}
+
+.form-body:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* フラッシュ ================================ */
+.flash {
+  padding: 10px 0;
+  color: white;
+  background-color: gray;
+  text-align: center;
+  position: absolute;
+  top: 74px;
+  z-index: 10;
+  width: 100%;
+  font-size: 15px;
+}

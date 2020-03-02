@@ -1,0 +1,34 @@
+<div class="main users-new">
+  <div class="container">
+  
+    <i class="fas fa-user-plus signup-mark"></i>
+    <div class="form-heading">SignUp</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+        <%= form_tag("/users/create") do %>
+          <p>UserName</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>Email</p>
+          <input name="email" value="<%= @user.email %>">
+          <p>Password</p>
+          <input type="password" name="password" value="<%= @user.password %>">
+          <input type="submit" value="SignUp">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style type="text/css">
+  .newu-color a{
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+</style>

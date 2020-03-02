@@ -1,0 +1,19 @@
+<div class="main posts-new">
+  <div class="container">
+    <i class="fas fa-edit post-edit-mark"></i>
+    <h1 class="form-heading">Edit</h1>
+    <%= form_tag("/posts/#{@post.id}/update") do %>
+    <div class="form">
+      <div class="form-body">
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+        <textarea name="content"><%= @post.content %></textarea>
+        <input type="submit" value="save">
+      </div>
+    </div>
+    <% end%>
+  </div>
+</div>

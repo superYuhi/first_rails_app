@@ -1,0 +1,73 @@
+<div class="main user-show">
+  <div class="container">
+    <% if @user.id == @current_user.id %>
+    <i class="fas fa-user-circle profile-mark"></i>
+    <h1 class="profile-heading">Profile</h1>
+    <% else %>
+    <i class="fas fa-users users-mark"></i>
+    <h1 class="users-heading">Users</h1>
+    <% end %>
+    <div class="user">
+      <img src="<%= "/user_images/#{@user.image_name}" %>">
+      <h2>name&nbsp;:&nbsp;<%= @user.name %></h2>
+      <p>email&nbsp;:&nbsp;<%= @user.email %></p>
+      <% if @user.id == @current_user.id %>
+        <%= link_to("Edit", "/users/#{@user.id}/edit") %>
+        <%= link_to("Logout", "/logout", {method: :post}) %>
+      <% end %>
+    </div>
+
+    <ul class="user-tabs">
+      <li class="active">
+        <span class="postsU-botton">
+        <i class="far fa-address-card postsL-mark"></i>
+        <%= link_to("Posts", "/users/#{@user.id}") %>
+        </span>
+      </li>
+      <li>
+        <span class="postsL-botton">
+        <i class="fas fa-thumbs-up likesL-mark"></i>
+        <%= link_to("Likes", "/users/#{@user.id}/likes") %>
+        </span>
+      </li>
+    </ul>
+    <% @likes.each do |like|%>
+      <% post = Post.find_by(id: like.post_id) %>
+
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/user_images/#{post.user.image_name}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          </div>
+          <span class="show-sentence-hover"><%= link_to(post.content, "/posts/#{post.id}") %></span>
+        </div>
+      </div>
+    <% end %>
+    <% %>
+  </div>
+</div>
+
+
+
+<% if @user.id == @current_user.id %>
+  <style type="text/css">
+    .showu-color a{
+      color: black;
+      background-color: white;
+      border-radius: 5px;
+    }
+  </style>
+<% end %>
+
+<style type="text/css">
+  .postsL-botton a{
+    color: white;
+  }
+
+  .likesL-mark {
+    color: #FF82B2;
+  }
+</style>

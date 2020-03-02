@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MuscleGram</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+    <script type="text/javascript">
+      setInterval('showClock1()',1000);
+      function showClock1() {
+        var DWs = new Array('Sun.','Mon.','Tue.','Wed.','Thu.','Fri.','Sat.');
+        var Now = new Date();
+        var YY = Now.getYear();
+        if (YY < 2000) { YY += 1900; }
+        var MM = set0( Now.getMonth() + 1 );
+        var DD = set0( Now.getDate() );
+        var DW = DWs[ Now.getDay() ];
+        var hh = set0( Now.getHours() );
+        var mm = set0( Now.getMinutes() );
+        var ss = set0( Now.getSeconds() );
+        var RTime1 = ' ' + YY + '.' + MM + '.' + DD + ' ' + DW + ' ' + hh + ':' + mm + ':' + ss + ' ';
+        document.getElementById("Clock1").innerHTML = RTime1;
+      }
+      function set0(num) {
+        var ret;
+        if( num < 10 ) { ret = "0" + num; }
+        else { ret = num; }
+        return ret;
+      }
+    </script>
+
+  </head>
+
+  <header>
+    <span class="logo-color">
+    <div class="header-logo">
+      <%= link_to("Muscle Gram", "/") %>
+    </div>
+    </span>
+    <% @current_user = User.find_by(id: session[:user_id]) %>
+    <ul class="header-menus">
+      <li>
+        <span class="indexp-color"><%= link_to("Posts", "/posts/index") %></span>
+      </li>
+      <% if @current_user %>
+        <li>
+          <span class="indexu-color"><%= link_to("Users", "/users/index") %></span>
+        </li>
+        <li>
+          <span class="newp-color"><%= link_to("NewPost", "/posts/new") %></span>
+        </li>
+      <% else %>
+        <li>
+          <span class="newu-color"><%= link_to("SignUp", "/signup") %></span>
+        </li>
+        <li>
+          <span class="login-color"><%= link_to("Login", "/login") %></span>
+        </li>
+      <% end %>
+    </ul>
+      <div class="header-user">
+        <% if @current_user %>
+          <img src="<%= "/user_images/#{@current_user.image_name}" %>">
+          <span class="showu-color"><%= link_to(@current_user.name, "/users/#{@current_user.id}") %></span>
+        <% end %>
+      </div>
+  </header>
+
+  <% if flash[:notice]%>
+    <div class="flash">
+      <%= flash[:notice]%>
+    </div>
+  <% end %>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

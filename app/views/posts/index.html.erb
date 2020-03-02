@@ -1,0 +1,29 @@
+<div class="main posts-index">
+  <div class="container">
+    <i class="far fa-address-card posts-mark"></i>
+    <h1 class="posts-heading">Posts</h1>
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <img src="<%= "/user_images/#{post.user.image_name}" %>">
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          </div>
+          <span class="post-sentence-hover"><%= link_to(post.content, "/posts/#{post.id}") %><span/>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<style type="text/css">
+  .indexp-color a{
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+  }
+</style>

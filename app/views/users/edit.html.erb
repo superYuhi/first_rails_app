@@ -1,0 +1,36 @@
+<div class="main users-edit">
+  <div class="container">
+
+    <i class="fas fa-user-edit edit-mark"></i>
+    <div class="form-heading">Edit</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+          <p>UserName</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>ProfilePhoto</p>
+          <input name="image" type="file">
+          <p>Email</p>
+            <input name="email" value="<%= @user.email %>">
+            <input type="submit" value="save">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style type="text/css">
+  .showu-color a{
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+  }
+</style>

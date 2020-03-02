@@ -1,0 +1,30 @@
+<div class="main posts-new">
+  <div class="container">
+    <i class="fas fa-pencil-alt newp-mark"></i>
+    <h1 class="form-heading">NewPost</h1>
+    <%= form_tag("/posts/create") do %>
+      <div class="form">
+        <div class="form-body">
+  
+          <% if @error_message %>
+            <div class="form-error">
+              <%= @error_message %>
+            </div>
+          <% end %>
+          <a>write...</a>
+          <textarea name="content"><%= @post.content %></textarea>
+          <input type="submit" value="share">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<style type="text/css">
+  .newp-color a{
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+  }
+</style>

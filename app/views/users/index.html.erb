@@ -1,0 +1,26 @@
+<div class="main users-index">
+  <div class="container">
+    
+    <i class="fas fa-users users-mark"></i>
+    <h1 class="users-heading">Users</h1>
+    <% @users.each do |user|%>
+      <div class="users-index-item">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{user.image_name}" %>">
+        </div>
+        <div class="user-right">
+          <span class="user-name-hover"><%=  link_to(user.name, "/users/#{user.id}")%></span>
+        </div>
+      </div>
+    <% end%>
+  </div>
+</div>
+
+
+<style type="text/css">
+  .indexu-color a{
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+  }
+</style>
