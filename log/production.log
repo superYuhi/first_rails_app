@@ -1,0 +1,41 @@
+I, [2020-03-06T11:33:37.063643 #56117]  INFO -- : [f8bcc0ea-5dee-4fac-8c28-89d9c8451738] Started GET "/login" for 127.0.0.1 at 2020-03-06 11:33:37 +0900
+I, [2020-03-06T11:33:37.069436 #56117]  INFO -- : [f8bcc0ea-5dee-4fac-8c28-89d9c8451738] Processing by UsersController#login_form as HTML
+D, [2020-03-06T11:33:37.082628 #56117] DEBUG -- : [f8bcc0ea-5dee-4fac-8c28-89d9c8451738]   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+I, [2020-03-06T11:33:37.083290 #56117]  INFO -- : [f8bcc0ea-5dee-4fac-8c28-89d9c8451738] Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms | Allocations: 1704)
+F, [2020-03-06T11:33:37.085322 #56117] FATAL -- : [f8bcc0ea-5dee-4fac-8c28-89d9c8451738]   
+[f8bcc0ea-5dee-4fac-8c28-89d9c8451738] ActiveRecord::StatementInvalid (Could not find table 'users'):
+[f8bcc0ea-5dee-4fac-8c28-89d9c8451738]   
+[f8bcc0ea-5dee-4fac-8c28-89d9c8451738] app/controllers/application_controller.rb:6:in `set_current_user'
+I, [2020-03-06T11:33:37.375080 #56117]  INFO -- : [d0dbce34-89e7-472c-96e9-a8fff333ae09] Started GET "/favicon.ico" for 127.0.0.1 at 2020-03-06 11:33:37 +0900
+F, [2020-03-06T11:33:37.376966 #56117] FATAL -- : [d0dbce34-89e7-472c-96e9-a8fff333ae09]   
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+[d0dbce34-89e7-472c-96e9-a8fff333ae09]   
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] rack (2.1.2) lib/rack/method_override.rb:24:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:77:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+[d0dbce34-89e7-472c-96e9-a8fff333ae09] puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+I, [2020-03-06T11:33:42.989508 #56117]  INFO -- : [bc27e6a1-31be-412e-a7a7-a85cb0c56b26] Started GET "/" for 127.0.0.1 at 2020-03-06 11:33:42 +0900
+I, [2020-03-06T11:33:42.992504 #56117]  INFO -- : [bc27e6a1-31be-412e-a7a7-a85cb0c56b26] Processing by HomeController#top as HTML
+I, [2020-03-06T11:33:42.997337 #56117]  INFO -- : [bc27e6a1-31be-412e-a7a7-a85cb0c56b26] Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 856)
+F, [2020-03-06T11:33:42.999340 #56117] FATAL -- : [bc27e6a1-31be-412e-a7a7-a85cb0c56b26]   
+[bc27e6a1-31be-412e-a7a7-a85cb0c56b26] ActiveRecord::StatementInvalid (Could not find table 'users'):
+[bc27e6a1-31be-412e-a7a7-a85cb0c56b26]   
+[bc27e6a1-31be-412e-a7a7-a85cb0c56b26] app/controllers/application_controller.rb:6:in `set_current_user'
