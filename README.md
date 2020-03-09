@@ -3,6 +3,7 @@
 * MuscleGram
 
   URL:https://first-rails-app-yuhi.herokuapp.com
+  
   新規投稿・いいね・ログイン・新規ユーザー登録などの機能を持つSNSです
   MuscleGramという名前は筋トレが好きなので命名しました
 
